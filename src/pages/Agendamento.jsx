@@ -1,11 +1,12 @@
 import React from 'react';
-import { CadastroPaciente } from '../components/CadastroPaciente';
+import { Link } from 'react-router-dom';
+import { AgendamentoConsulta } from '../components/AgendamentoConsulta';
 
 export const Agendamento = () => {
   return (
     <>
-      <span>Página de agendamento</span>
-      <CadastroPaciente />
+      <Link to="/consultas">Consultas</Link>
+      <AgendamentoConsulta />
     </>
   );
 }

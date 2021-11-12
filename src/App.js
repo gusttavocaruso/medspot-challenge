@@ -1,9 +1,10 @@
-import './App.css';
+import { Agendamento } from "./pages/Agendamento";
+
 
 function App() {
   return (
     <div className="App">
-      <p>HelloW</p>
+      <Agendamento />
     </div>
   );
 }

@@ -6,13 +6,7 @@ import logo from '../img/medspot-logo.png';
 
 export const Agendamento = () => {
   const contexto = useContext(Context);
-  const { schedule, setSchedule } = contexto;
-
-  schedule ? 
-    setTimeout(() => {
-      setSchedule(false)
-    }, 3000) : console.log('easter-egg')
-
+  const { schedule } = contexto;
 
   return (
     <>
@@ -24,11 +18,11 @@ export const Agendamento = () => {
         </button>
       </Link>
 
-      { schedule ?
+      { !schedule ? '' :
         (<>
           <h4>Consulta agendada com sucesso!</h4>
           <img alt="medspot" src={ logo }  className="logo-img"/>
-         </>) : ''}
+         </>) }
     </>
   );
 }

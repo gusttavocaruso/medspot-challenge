@@ -2,14 +2,24 @@ import React, { useState } from 'react';
 import { Context } from './Context';
 
 export const Provider = ({ children }) => {
-  const [consultasOn, setConsultasOn] = useState([]);
+  const [querySchedule, setQuerySchedule] = useState([]);
+  const [queryHistory, setQueryHistory] = useState([])
   const [schedule, setSchedule] = useState(false);
+  const [sw, setSw] = useState(false);
+
+  schedule ?
+  setTimeout(() => { setSchedule(false) }, 2500)
+    : console.log('easter-egg')
 
   const contextValue = {
-    consultasOn,
-    setConsultasOn,
+    querySchedule,
+    setQuerySchedule,
+    queryHistory,
+    setQueryHistory,
     schedule,
     setSchedule,
+    sw,
+    setSw,
   }
 
   return (

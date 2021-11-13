@@ -6,7 +6,7 @@
   margin-top: 6%;
 }
 
-.formulario-cadastro h2, h2, p, h4 {
+.formulario-cadastro h2, h2, p, h4, .sw {
   text-align: center;
   margin: 10px;
 }
@@ -65,7 +65,7 @@ td {
   background-color: dodgerblue;
   color: aliceblue;
   font-size: large;
-  width: 30%;
+  width: 35%;
   margin: auto;
   margin-top: 10px;
   border-radius: 6px;
@@ -81,4 +81,35 @@ td {
   margin: auto;
   display: flex;
   justify-content: center;
+}
+
+.sw-btn {
+  background: #efefef;
+  height: 30px;
+  width: 60px;
+  border-radius: 20px;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  transition: background 0.5s;
+}
+
+.sw-spn {
+  display: block;
+  background: #999;
+  height: 26px;
+  width: 26px;
+  border-radius: 50%;
+  margin-left: 2.5px;
+  transition: background 0.5s, margin-left 0.5s;
+}
+
+
+.sw-btn .active {
+  background-color: dodgerblue;
+}
+
+.active span {
+  background: #fff;
+  margin-left: 20px;
 }

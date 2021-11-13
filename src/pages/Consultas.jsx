@@ -31,11 +31,16 @@ export const Consultas = () => {
 
   return(
     <>
-      <Link to="/">Marcar nova consulta</Link>
+      <h2>Consultas</h2>
       <div className="formulario-cadastro">
         { consultasOn.length === 0 ? <h2>Nenhuma consulta agendada</h2>
           : handleTable() }
       </div>
+      <Link to="/" className="link">
+        <button type="button" className="rota">
+          Marcar uma nova consulta
+        </button>
+      </Link>
     </>
   );
 }

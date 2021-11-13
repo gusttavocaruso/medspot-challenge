@@ -4,7 +4,7 @@ import { agenda, specialities } from '../services/data';
 
 export const AgendamentoConsulta = () => {
   const contexto = useContext(Context);
-  const { consultasOn, setConsultasOn } = contexto;
+  const { consultasOn, setConsultasOn, setSchedule } = contexto;
   const [query, setQuery] = useState(
     { nomePaciente: '', especialidade: '', dataConsulta: '', horaConsulta: '' });
   const { nomePaciente, especialidade, dataConsulta, horaConsulta } = query;
@@ -18,6 +18,7 @@ export const AgendamentoConsulta = () => {
 
   const submitNewQuery = () => {
     setConsultasOn([...consultasOn, query]);
+    setSchedule(true);
     setQuery(
       { nomePaciente: '', especialidade: '',  dataConsulta: '',  horaConsulta: '' });
   }
@@ -79,7 +80,7 @@ export const AgendamentoConsulta = () => {
       <button type="button" onClick={ submitNewQuery } disabled={ preventWrong }>
         AGENDAR 
       </button>
-      <p>preencha todos os campos</p>
+      { preventWrong ? <p>preencha todos os campos</p> : <p>✓</p> }
 
     </form>
   );

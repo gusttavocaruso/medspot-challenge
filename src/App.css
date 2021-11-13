@@ -6,7 +6,7 @@
   margin-top: 6%;
 }
 
-.formulario-cadastro h2 {
+.formulario-cadastro h2, h2, p, h4 {
   text-align: center;
   margin: 10px;
 }
@@ -26,7 +26,7 @@
 }
 
 .formulario-cadastro button {
-  background-color: seagreen;
+  background-color: dodgerblue;
   color: aliceblue;
   font-size: large;
   width: 50%;
@@ -57,4 +57,28 @@ td {
   background-color: deepskyblue;
   margin: 10px;
   padding: 10px;
+}
+
+.rota {
+  display: flex;
+  justify-content: center;
+  background-color: dodgerblue;
+  color: aliceblue;
+  font-size: large;
+  width: 30%;
+  margin: auto;
+  margin-top: 10px;
+  border-radius: 6px;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.logo-img {
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
 }

@@ -35,7 +35,7 @@ export const Consultas = () => {
           </button>
         </Link>
       </div>
-      <div className="formulario-cadastro">
+      <div>
         { querySchedule.length === 0
           ? <h4>Não há consultas agendadas</h4>
           : handleTable(querySchedule, unScheduleQuery) }

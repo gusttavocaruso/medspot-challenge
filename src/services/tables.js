@@ -18,7 +18,9 @@ export const handleTable = (querySchedule, unScheduleQuery) => (
             <td>{ consulta.especialidade }</td>
             <td>{ consulta.dataConsulta }</td>
             <td>{ consulta.horaConsulta }</td>
-            <button type="button" onClick={ () => unScheduleQuery(i) }> X </button>
+            <button className="x" type="button" onClick={ () => unScheduleQuery(i) }>
+              —
+            </button>
           </tr>
         ))}
       </tbody>

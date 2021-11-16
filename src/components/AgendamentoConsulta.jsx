@@ -22,10 +22,10 @@ export const AgendamentoConsulta = () => {
   }
 
   querySchedule.map((qry) => 
-  qry.dataConsulta === dataConsulta ?
-    agenda.map((hora) =>
-      hora === qry.horaConsulta ?
-      agenda.splice(agenda.indexOf(hora), 1) : agenda) : agenda)
+    qry.dataConsulta === dataConsulta ?
+      agenda.map((hora) =>
+        hora === qry.horaConsulta ?
+        agenda.splice(agenda.indexOf(hora), 1) : agenda) : agenda)
 
   const preventWrong = (
     (nomePaciente === '') ||
@@ -55,8 +55,9 @@ export const AgendamentoConsulta = () => {
           id="specialist-opt"
           name="especialidade"
           value={ especialidade }
-          onChange={ handleQueryChange } >
-            {specialities.map((i, j) => <option key={ j }>{ i }</option> )}
+          onChange={ handleQueryChange }>
+          <option value="" selected disabled hidden>Selecione</option>
+          {specialities.map((i, j) => <option key={ j }>{ i }</option> )}
         </select>
       </label>
 
@@ -77,7 +78,8 @@ export const AgendamentoConsulta = () => {
           id="horarios-consulta"
           name="horaConsulta"
           value={ horaConsulta }
-          onChange={ handleQueryChange } >
+          onChange={ handleQueryChange }>
+          <option value="" selected disabled hidden>Selecione</option>
           {agenda.map((i, j) => <option key={ j }>{ i }</option>)}
         </select>
       </label>

@@ -48,7 +48,7 @@ table {
 th {
   background-color: rgb(24, 58, 109);
   color: white;
-  /* font-size: large; */
+  font-size: large;
   font-variant: small-caps;
   margin: 10px 0;
   padding: 10px;
@@ -57,8 +57,8 @@ th {
 
 td {
   background-color: rgb(36, 123, 209);
+  color: white;
   margin: 10px;
-  /* padding: 10px; */
   border-style: groove;
 }
 
@@ -103,7 +103,7 @@ td {
   height: 26px;
   width: 26px;
   border-radius: 50%;
-  margin-left: 0.2px;
+  margin-left: 1px;
   transition: background 0.5s, margin-left 0.5s;
 }
 
@@ -115,4 +115,15 @@ td {
 .active span {
   background: #fff;
   margin-left: 20px;
+}
+
+.x {
+  background-color: rgb(184, 70, 85);
+  color: aliceblue;
+  font-size: x-large;
+  font-weight: 1000;
+  width: 30%;
+  margin: auto;
+  padding: 1px;
+  border-radius: 50%;
 }

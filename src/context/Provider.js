@@ -6,6 +6,8 @@ export const Provider = ({ children }) => {
   const [queryHistory, setQueryHistory] = useState([])
   const [schedule, setSchedule] = useState(false);
   const [sw, setSw] = useState(false);
+  const [query, setQuery] = useState(
+    { nomePaciente: '', especialidade: '', dataConsulta: '', horaConsulta: '' });
 
   schedule ?
   setTimeout(() => { setSchedule(false) }, 2500)
@@ -20,6 +22,8 @@ export const Provider = ({ children }) => {
     setSchedule,
     sw,
     setSw,
+    query,
+    setQuery,
   }
 
   return (

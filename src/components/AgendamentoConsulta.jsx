@@ -4,9 +4,7 @@ import { agenda, specialities } from '../services/data';
 
 export const AgendamentoConsulta = () => {
   const contexto = useContext(Context);
-  const { querySchedule, setQuerySchedule, setSchedule } = contexto;
-  const [query, setQuery] = useState(
-    { nomePaciente: '', especialidade: '', dataConsulta: '', horaConsulta: '' });
+  const { querySchedule, setQuerySchedule, setSchedule, query, setQuery } = contexto;
   const { nomePaciente, especialidade, dataConsulta, horaConsulta } = query;
 
   const handleQueryChange = ({ target }) => {
@@ -23,12 +21,11 @@ export const AgendamentoConsulta = () => {
       { nomePaciente: '', especialidade: '',  dataConsulta: '',  horaConsulta: '' });
   }
 
-  querySchedule.map(({ dataConsulta, horaConsulta }) => 
-    query.dataConsulta === dataConsulta ?
-      agenda.map((hora) =>
-        hora === horaConsulta ?
-        agenda.splice(agenda.indexOf(hora), 1) : agenda) : agenda)
-
+  querySchedule.map((qry) => 
+  qry.dataConsulta === dataConsulta ?
+    agenda.map((hora) =>
+      hora === qry.horaConsulta ?
+      agenda.splice(agenda.indexOf(hora), 1) : agenda) : agenda)
 
   const preventWrong = (
     (nomePaciente === '') ||
@@ -67,6 +64,7 @@ export const AgendamentoConsulta = () => {
         Data para consulta: <br />
         <input
           type="date"
+          min="2021-12-01" max="2021-12-01"
           id="data-consulta"
           name="dataConsulta"
           value={ dataConsulta }

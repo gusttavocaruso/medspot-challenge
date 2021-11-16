@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Context } from '../context/Context';
-import { getToday } from '../services/data';
+import { agenda, getToday } from '../services/data';
 import { btnClass, handleTable, historyTable, spnClass, swChange } from '../services/tables';
 
 export const Consultas = () => {
@@ -10,6 +10,8 @@ export const Consultas = () => {
 
   const unScheduleQuery = (i) => {
     const nowTime = getToday();
+    agenda.push(querySchedule[i].horaConsulta)
+    agenda.sort();
     setQueryHistory([ ...queryHistory, { ...querySchedule[i], dataDesmarcada: nowTime }]);
     setQuerySchedule(querySchedule.filter((qry) => qry !== querySchedule[i]))
   }

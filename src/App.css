@@ -26,7 +26,7 @@
 }
 
 .formulario-cadastro button {
-  background-color: dodgerblue;
+  background-color: rgb(36, 123, 209);
   color: aliceblue;
   font-size: large;
   width: 50%;
@@ -46,26 +46,29 @@ table {
 }
 
 th {
-  background-color: dodgerblue;
-  font-size: large;
+  background-color: rgb(24, 58, 109);
+  color: white;
+  /* font-size: large; */
   font-variant: small-caps;
   margin: 10px 0;
   padding: 10px;
+  border-style: groove;
 }
 
 td {
-  background-color: deepskyblue;
+  background-color: rgb(36, 123, 209);
   margin: 10px;
-  padding: 10px;
+  /* padding: 10px; */
+  border-style: groove;
 }
 
 .rota {
   display: flex;
   justify-content: center;
-  background-color: dodgerblue;
+  background-color: rgb(36, 123, 209);
   color: aliceblue;
   font-size: large;
-  width: 35%;
+  width: 45%;
   margin: auto;
   margin-top: 10px;
   border-radius: 6px;
@@ -84,7 +87,7 @@ td {
 }
 
 .sw-btn {
-  background: #efefef;
+  background: #e4dfdf;
   height: 30px;
   width: 60px;
   border-radius: 20px;
@@ -100,7 +103,7 @@ td {
   height: 26px;
   width: 26px;
   border-radius: 50%;
-  margin-left: 2.5px;
+  margin-left: 0.2px;
   transition: background 0.5s, margin-left 0.5s;
 }
 

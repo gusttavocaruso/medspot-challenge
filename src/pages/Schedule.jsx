@@ -1,16 +1,16 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { AgendamentoConsulta } from '../components/AgendamentoConsulta';
+import { NewAppointment } from '../components/NewAppointment';
 import { Context } from '../context/Context';
 import logo from '../img/medspot-logo.png';
 
-export const Agendamento = () => {
+export const Schedule = () => {
   const contexto = useContext(Context);
   const { schedule } = contexto;
 
   return (
     <>
-      <AgendamentoConsulta />
+      <NewAppointment />
 
       <Link to="/consultas" className="link">
         <button type="button" className="rota">

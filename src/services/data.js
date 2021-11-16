@@ -37,3 +37,10 @@ export const getToday = () => {
   const min = today.getMinutes();
   return today = `${y}-${m}-${d} ${hr}h${min}`;
 }
+
+export const nearlyAppointmentTime = (horaConsulta) => {
+  const nowHour = parseFloat(getToday().split(' ')[1].split('h').join('.'));
+  console.log(nowHour)
+  const appntHour = parseFloat((horaConsulta.split('h').join('.')));
+  return ((appntHour - 12) <= 2) ? true : false;
+}

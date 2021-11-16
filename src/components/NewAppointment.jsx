@@ -2,26 +2,26 @@ import React, { useContext } from 'react';
 import { Context } from '../context/Context';
 import { agenda, specialities } from '../services/data';
 
-export const AgendamentoConsulta = () => {
+export const NewAppointment = () => {
   const contexto = useContext(Context);
-  const { querySchedule, setQuerySchedule, setSchedule, query, setQuery } = contexto;
-  const { nomePaciente, especialidade, dataConsulta, horaConsulta } = query;
+  const { appointmentSchedule, setAppointmentSchedule, setSchedule, appointment, setAppointment } = contexto;
+  const { nomePaciente, especialidade, dataConsulta, horaConsulta } = appointment;
 
-  const handleQueryChange = ({ target }) => {
-    setQuery({
-      ...query,
+  const handleAppointmentChange = ({ target }) => {
+    setAppointment({
+      ...appointment,
       [target.name]: target.value,
     })
   }
 
-  const submitNewQuery = () => {
-    setQuerySchedule([...querySchedule, query]);
+  const submitNewAppointment = () => {
+    setAppointmentSchedule([...appointmentSchedule, appointment]);
     setSchedule(true);
-    setQuery(
+    setAppointment(
       { nomePaciente: '', especialidade: '',  dataConsulta: '',  horaConsulta: '' });
   }
 
-  querySchedule.map((qry) => 
+  appointmentSchedule.map((qry) => 
     qry.dataConsulta === dataConsulta ?
       agenda.map((hora) =>
         hora === qry.horaConsulta ?
@@ -46,7 +46,7 @@ export const AgendamentoConsulta = () => {
           name="nomePaciente"
           value={ nomePaciente }
           placeholder="Digite seu nome"
-          onChange={ handleQueryChange } />
+          onChange={ handleAppointmentChange } />
       </label>
 
       <label htmlFor="specialist-opt">
@@ -55,7 +55,7 @@ export const AgendamentoConsulta = () => {
           id="specialist-opt"
           name="especialidade"
           value={ especialidade }
-          onChange={ handleQueryChange }>
+          onChange={ handleAppointmentChange }>
           <option value="" selected disabled hidden>Selecione</option>
           {specialities.map((i, j) => <option key={ j }>{ i }</option> )}
         </select>
@@ -69,7 +69,7 @@ export const AgendamentoConsulta = () => {
           id="data-consulta"
           name="dataConsulta"
           value={ dataConsulta }
-          onChange={ handleQueryChange } />
+          onChange={ handleAppointmentChange } />
       </label>
 
       <label htmlFor="horario-consulta">
@@ -78,16 +78,20 @@ export const AgendamentoConsulta = () => {
           id="horarios-consulta"
           name="horaConsulta"
           value={ horaConsulta }
-          onChange={ handleQueryChange }>
+          onChange={ handleAppointmentChange }>
           <option value="" selected disabled hidden>Selecione</option>
           {agenda.map((i, j) => <option key={ j }>{ i }</option>)}
         </select>
       </label>
 
-      <button type="button" onClick={ submitNewQuery } disabled={ preventWrong }>
+      <button
+        type="button"
+        className="standardBtn"
+        onClick={ submitNewAppointment }
+        disabled={ preventWrong }>
         AGENDAR 
       </button>
-      { preventWrong ? <p>preencha todos os campos</p> : <p>✓</p> }
+      { preventWrong ? <p>preencha todos os campos</p> : <p>✔</p> }
 
     </form>
   );

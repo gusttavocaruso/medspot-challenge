@@ -1,7 +1,7 @@
-export const handleTable = (querySchedule, unScheduleQuery) => (
+export const handleTable = (appointmentSchedule, nearlyAppointmentTime, unScheduleAppointment) => (
   <>
-    <p>CONSULTAS AGENDADAS</p>
     <table>
+      <caption>CONSULTAS AGENDADAS</caption>
       <thead>
         <tr>
           <th>nomePaciente</th>
@@ -12,26 +12,37 @@ export const handleTable = (querySchedule, unScheduleQuery) => (
         </tr>
       </thead>
       <tbody>
-        {querySchedule.map((consulta, i) => (
+        {appointmentSchedule.map((consulta, i) => (
           <tr key={ i }>
             <td>{ consulta.nomePaciente }</td>
             <td>{ consulta.especialidade }</td>
             <td>{ consulta.dataConsulta }</td>
             <td>{ consulta.horaConsulta }</td>
-            <button className="x" type="button" onClick={ () => unScheduleQuery(i) }>
-              —
-            </button>
+            { nearlyAppointmentTime(consulta.horaConsulta) ?
+              <p className="nearly-app"
+                title="A CONSULTA OCORRERÁ EM MENOS DE 2 HORAS
+                - NÃO É POSSÍVEL DESMARCAR"> ❋ </p> :
+              (<button
+                className="x"
+                type="button"
+                title="CLIQUE PARA DESMARCAR"
+                onClick={ () => unScheduleAppointment(i) }>
+                  ✘ </button>)}
           </tr>
         ))}
       </tbody>
     </table>
+    <p>
+      <span className="nearly-leg"> ❋ </span>
+      A consulta ocorrerá em menos de 2 horas - Não é possível desmarcar
+    </p>
   </>
 );
 
-export const historyTable = (queryHistory) => (
+export const historyTable = (appointmentHistory) => (
   <>
-    <p>CONSULTAS DESMARCADAS</p>
     <table>
+    <caption>CONSULTAS DESMARCADAS</caption>
       <thead>
         <tr>
           <th>nomePaciente</th>
@@ -42,7 +53,7 @@ export const historyTable = (queryHistory) => (
         </tr>
       </thead>
       <tbody>
-        {queryHistory.map((consulta, i) => (
+        {appointmentHistory.map((consulta, i) => (
           <tr key={ i }>
             <td>{ consulta.nomePaciente }</td>
             <td>{ consulta.especialidade }</td>

@@ -1,23 +1,23 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Context } from '../context/Context';
-import { agenda, getToday } from '../services/data';
+import { agenda, getToday, nearlyAppointmentTime } from '../services/data';
 import { btnClass, handleTable, historyTable, spnClass, swChange } from '../services/tables';
 
-export const Consultas = () => {
+export const Appointments = () => {
   const contexto = useContext(Context);
-  const { querySchedule, setQuerySchedule, queryHistory, setQueryHistory, sw, setSw } = contexto;
+  const { appointmentSchedule, setAppointmentSchedule, appointmentHistory, setAppointmentHistory, sw, setSw } = contexto;
+  const nowTime = getToday();
 
-  const unScheduleQuery = (i) => {
-    const nowTime = getToday();
-    agenda.push(querySchedule[i].horaConsulta)
+  const unScheduleAppointment = (i) => {
+    agenda.push(appointmentSchedule[i].horaConsulta)
     agenda.sort();
-    setQueryHistory([ ...queryHistory, { ...querySchedule[i], dataDesmarcada: nowTime }]);
-    setQuerySchedule(querySchedule.filter((qry) => qry !== querySchedule[i]))
+    setAppointmentHistory([ ...appointmentHistory, { ...appointmentSchedule[i], dataDesmarcada: nowTime }]);
+    setAppointmentSchedule(appointmentSchedule.filter((qry) => qry !== appointmentSchedule[i]))
   }
 
   return(
-    <>
+    <div>
       <div className="header-tables">
         <h2>Consultas</h2>
         <div className="sw">
@@ -35,15 +35,15 @@ export const Consultas = () => {
           </button>
         </Link>
       </div>
-      <div>
-        { querySchedule.length === 0
+      <div className="formulario-cadastro">
+        { appointmentSchedule.length === 0
           ? <h4>Não há consultas agendadas</h4>
-          : handleTable(querySchedule, unScheduleQuery) }
+          : handleTable(appointmentSchedule, nearlyAppointmentTime, unScheduleAppointment) }
         { sw ? (
-          queryHistory.length === 0 ? 
+          appointmentHistory.length === 0 ? 
             <h4>Não há consultas desmarcadas</h4> :
-            historyTable(queryHistory)) : '' } 
+            historyTable(appointmentHistory)) : '' } 
       </div>
-    </>
+    </div>
   );
 }

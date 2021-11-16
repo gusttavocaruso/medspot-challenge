@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { Context } from './Context';
 
 export const Provider = ({ children }) => {
-  const [querySchedule, setQuerySchedule] = useState([]);
-  const [queryHistory, setQueryHistory] = useState([])
+  const [appointmentSchedule, setAppointmentSchedule] = useState([]);
+  const [appointmentHistory, setAppointmentHistory] = useState([])
   const [schedule, setSchedule] = useState(false);
   const [sw, setSw] = useState(false);
-  const [query, setQuery] = useState(
+  const [appointment, setAppointment] = useState(
     { nomePaciente: '', especialidade: '', dataConsulta: '', horaConsulta: '' });
 
   schedule ?
@@ -14,16 +14,16 @@ export const Provider = ({ children }) => {
     : console.log('easter-egg')
 
   const contextValue = {
-    querySchedule,
-    setQuerySchedule,
-    queryHistory,
-    setQueryHistory,
+    appointmentSchedule,
+    setAppointmentSchedule,
+    appointmentHistory,
+    setAppointmentHistory,
     schedule,
     setSchedule,
     sw,
     setSw,
-    query,
-    setQuery,
+    appointment,
+    setAppointment,
   }
 
   return (

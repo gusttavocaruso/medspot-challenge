@@ -18,24 +18,25 @@
 
 .formulario-cadastro input {
   font-size: large;
+  width: 30%;
 }
 
 .formulario-cadastro select {
-  margin-left: 10px;
   font-size: large;
+  width: 30%;
 }
 
-.formulario-cadastro button {
+.standardBtn {
   background-color: rgb(36, 123, 209);
   color: aliceblue;
   font-size: large;
-  width: 50%;
+  width: 34%;
   margin: auto;
   margin-top: 10px;
   border-radius: 6px;
 }
 
-.formulario-cadastro button:disabled {
+.standardBtn:disabled {
   opacity: 50%
 }
 
@@ -56,8 +57,7 @@ th {
 }
 
 td {
-  background-color: rgb(36, 123, 209);
-  color: white;
+  background-color: rgb(252, 252, 252);
   margin: 10px;
   border-style: groove;
 }
@@ -68,7 +68,7 @@ td {
   background-color: rgb(36, 123, 209);
   color: aliceblue;
   font-size: large;
-  width: 45%;
+  width: 40%;
   margin: auto;
   margin-top: 10px;
   border-radius: 6px;
@@ -118,12 +118,30 @@ td {
 }
 
 .x {
-  background-color: rgb(184, 70, 85);
-  color: aliceblue;
-  font-size: x-large;
-  font-weight: 1000;
-  width: 30%;
+  color: red;
+  font-size: xx-large;
+  font-weight: 500;
   margin: auto;
-  padding: 1px;
-  border-radius: 50%;
+  padding: 0 20%;
+  border: none;
+  background-color: white;
+}
+
+.header-tables {
+  margin: auto;
+}
+
+.nearly-app {
+  font-size: xx-large;
+  color: rgb(36, 123, 209);
+}
+
+.nearly-leg {
+  font-size: large;
+  color: rgb(36, 123, 209);
+}
+
+caption {
+  font-weight: 700;
+  color:rgb(24, 58, 109);
 }

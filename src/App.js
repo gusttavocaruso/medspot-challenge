@@ -1,16 +1,16 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Agendamento } from "./pages/Agendamento";
+import { Schedule } from "./pages/Schedule";
 import { Provider } from './context/Provider';
 import './App.css';
-import { Consultas } from "./pages/Consultas";
+import { Appointments } from "./pages/Appointments";
 
 function App() {
   return (
     <Provider>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Agendamento/>} />
-          <Route path="/consultas" element={<Consultas/>} />
+          <Route path="/" element={<Schedule />} />
+          <Route path="/consultas" element={<Appointments />} />
         </Routes>
       </BrowserRouter>
     </Provider>

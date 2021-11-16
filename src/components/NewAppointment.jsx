@@ -22,10 +22,10 @@ export const NewAppointment = () => {
   }
 
   appointmentSchedule.map((qry) => 
-    qry.dataConsulta === dataConsulta ?
+    // qry.dataConsulta === dataConsulta ?
       agenda.map((hora) =>
         hora === qry.horaConsulta ?
-        agenda.splice(agenda.indexOf(hora), 1) : agenda) : agenda)
+        agenda.splice(agenda.indexOf(hora), 1) : agenda) )//: agenda)
 
   const preventWrong = (
     (nomePaciente === '') ||

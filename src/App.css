@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  margin-top: 6%;
+  margin-top: 0.5%;
 }
 
 .formulario-cadastro h2, h2, p, h4, .sw {
@@ -44,6 +44,7 @@ table {
   font-family: Verdana , Geneva , Tahoma , sans-serif;
   text-align: center;
   width: auto;
+  margin-top: 2.5%;
 }
 
 th {
@@ -53,13 +54,13 @@ th {
   font-variant: small-caps;
   margin: 10px 0;
   padding: 10px;
-  border-style: groove;
+  border-style: inset;
 }
 
 td {
   background-color: rgb(252, 252, 252);
   margin: 10px;
-  border-style: groove;
+  border-style:ridge;
 }
 
 .rota {
@@ -78,12 +79,26 @@ td {
   text-decoration: none;
 }
 
-.logo-img {
-  width: 50px;
-  height: 50px;
+.seta-img {
+  width: 60px;
+  height: 60px;
   margin: auto;
   display: flex;
   justify-content: center;
+}
+
+.logo-img {
+  width: 25%;
+  padding-top: 10px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.logo-text {
+  margin: auto;
+  font-style: italic;
+  color: rgb(24, 58, 109);
 }
 
 .sw-btn {
@@ -132,6 +147,7 @@ td {
 }
 
 .nearly-app {
+  background-color: lawngreen;
   font-size: xx-large;
   color: rgb(36, 123, 209);
 }

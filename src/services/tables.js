@@ -4,11 +4,11 @@ export const handleTable = (appointmentSchedule, nearlyAppointmentTime, unSchedu
       <caption>CONSULTAS AGENDADAS</caption>
       <thead>
         <tr>
-          <th>nomePaciente</th>
-          <th>especialidade</th>
-          <th>dataConsulta</th>
-          <th>horaConsulta</th>
-          <th>desmarcar</th>
+          <th>NomePaciente</th>
+          <th>Especialidade</th>
+          <th>DataConsulta</th>
+          <th>HoraConsulta</th>
+          <th>Desmarcar</th>
         </tr>
       </thead>
       <tbody>
@@ -18,16 +18,16 @@ export const handleTable = (appointmentSchedule, nearlyAppointmentTime, unSchedu
             <td>{ consulta.especialidade }</td>
             <td>{ consulta.dataConsulta }</td>
             <td>{ consulta.horaConsulta }</td>
-            { nearlyAppointmentTime(consulta.horaConsulta) ?
-              <p className="nearly-app"
+            <td>{ nearlyAppointmentTime(consulta.horaConsulta) ?
+              (<p className="nearly-app"
                 title="A CONSULTA OCORRERÁ EM MENOS DE 2 HORAS
-                - NÃO É POSSÍVEL DESMARCAR"> ❋ </p> :
+                - NÃO É POSSÍVEL DESMARCAR"> ❋ </p>) :
               (<button
                 className="x"
                 type="button"
                 title="CLIQUE PARA DESMARCAR"
                 onClick={ () => unScheduleAppointment(i) }>
-                  ✘ </button>)}
+                  ✘ </button>)}</td>
           </tr>
         ))}
       </tbody>
@@ -42,13 +42,13 @@ export const handleTable = (appointmentSchedule, nearlyAppointmentTime, unSchedu
 export const historyTable = (appointmentHistory) => (
   <>
     <table>
-    <caption>CONSULTAS DESMARCADAS</caption>
+      <caption>CONSULTAS DESMARCADAS - HISTÓRICO</caption>
       <thead>
         <tr>
-          <th>nomePaciente</th>
-          <th>especialidade</th>
-          <th>dataConsulta</th>
-          <th>horaConsulta</th>
+          <th>NomePaciente</th>
+          <th>Especialidade</th>
+          <th>DataConsulta</th>
+          <th>HoraConsulta</th>
           <th>Quando?</th>
         </tr>
       </thead>

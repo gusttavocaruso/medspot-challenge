@@ -42,5 +42,5 @@ export const nearlyAppointmentTime = (horaConsulta) => {
   const nowHour = parseFloat(getToday().split(' ')[1].split('h').join('.'));
   console.log(nowHour)
   const appntHour = parseFloat((horaConsulta.split('h').join('.')));
-  return ((appntHour - 12) <= 2) ? true : false;
+  return ((appntHour - 12) >= 2) || appntHour < 12 ? false : true;
 }

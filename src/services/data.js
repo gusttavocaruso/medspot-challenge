@@ -20,27 +20,5 @@ export const agenda = [
 ];
 
 export const specialities = [
-  'Oftalmologista',
-  'Cardiologista',
   'Ortopedista',
-  'Urologista',
-  'Ginecologista',
-  'Nutricionista'
 ];
-
-export const getToday = () => {
-  let today = new Date();
-  const d = String(today.getDate()).padStart(2, '0');
-  const m = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-  const y = today.getFullYear();
-  const hr = today.getHours();
-  const min = today.getMinutes();
-  return today = `${y}-${m}-${d} ${hr}h${min}`;
-}
-
-export const nearlyAppointmentTime = (horaConsulta) => {
-  const nowHour = parseFloat(getToday().split(' ')[1].split('h').join('.'));
-  console.log(nowHour)
-  const appntHour = parseFloat((horaConsulta.split('h').join('.')));
-  return ((appntHour - 12) >= 2) || appntHour < 12 ? false : true;
-}

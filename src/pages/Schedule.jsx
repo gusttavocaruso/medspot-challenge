@@ -2,16 +2,16 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { NewAppointment } from '../components/NewAppointment';
 import { Context } from '../context/Context';
-import setaMed from '../img/medspot_seta.png';
-import logoMed from '../img/medspot_logo.png';
+import setaMedSpot from '../img/medspot_seta.png';
+import logoMedSpot from '../img/medspot_logo.png';
 
 export const Schedule = () => {
   const contexto = useContext(Context);
-  const { schedule } = contexto;
+  const { scheduled } = contexto;
 
   return (
     <>
-      <img alt="logo" src={ logoMed } className="logo-img" />
+      <img alt="logo" src={ logoMedSpot } className="logo-img" />
       <p className="logo-text">Rápido, prático e seguro</p>
 
       <NewAppointment />
@@ -22,11 +22,11 @@ export const Schedule = () => {
         </button>
       </Link>
 
-      { !schedule ? '' :
-        (<>
-          <p>Consulta agendada com sucesso!
-          <img alt="medspot" src={ setaMed }  className="seta-img"/></p>
-         </>) }
+      { !scheduled ? '' :
+        ( <p>
+            Consulta agendada com sucesso!
+            <img alt="seta" src={ setaMedSpot } className="seta-img"/>
+          </p> ) }
     </>
   );
 }

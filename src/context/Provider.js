@@ -4,13 +4,13 @@ import { Context } from './Context';
 export const Provider = ({ children }) => {
   const [appointmentSchedule, setAppointmentSchedule] = useState([]);
   const [appointmentHistory, setAppointmentHistory] = useState([])
-  const [schedule, setSchedule] = useState(false);
+  const [scheduled, setScheduled] = useState(false);
   const [sw, setSw] = useState(false);
   const [appointment, setAppointment] = useState(
     { nomePaciente: '', especialidade: '', dataConsulta: '', horaConsulta: '' });
 
-  schedule ?
-  setTimeout(() => { setSchedule(false) }, 2500)
+  scheduled ?
+  setTimeout(() => { setScheduled(false) }, 2500)
     : console.log('easter-egg')
 
   const contextValue = {
@@ -18,8 +18,8 @@ export const Provider = ({ children }) => {
     setAppointmentSchedule,
     appointmentHistory,
     setAppointmentHistory,
-    schedule,
-    setSchedule,
+    scheduled,
+    setScheduled,
     sw,
     setSw,
     appointment,

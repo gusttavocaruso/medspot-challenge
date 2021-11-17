@@ -88,7 +88,7 @@ td {
 }
 
 .logo-img {
-  width: 25%;
+  width: 35%;
   padding-top: 10px;
   margin: auto;
   display: flex;
@@ -137,7 +137,7 @@ td {
   font-size: xx-large;
   font-weight: 500;
   margin: auto;
-  padding: 0 20%;
+  padding: 0 30%;
   border: none;
   background-color: white;
 }
@@ -150,6 +150,8 @@ td {
   background-color: lawngreen;
   font-size: xx-large;
   color: rgb(36, 123, 209);
+  border: none;
+  padding: 0 30%;
 }
 
 .nearly-leg {

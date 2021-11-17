@@ -1,21 +1,24 @@
-Requisitos solicitados:
 
-- Crie uma pagina que tenha um formulário com dados de um paciente (nome, cpf/rg, etc)
+### Desafio Tech Medspot
 
-- Crie um formulário nessa mesma pagina que tenha dados de uma consulta (data, hora, especialidade)
+  O desafio consiste no desenvolvimento de 2 componentes principais que devem conversar
+entre si para realizar a marcação e o acompanhamento de consultas simples.
 
-  -As consultas serão de 30 minutos;
-  -As consultas podem ser marcadas entr 9h00 - 18h00;
-  -Somente uma consulta pode ser marcada por horário;
+- Requisito 1: Formulário para marcação de consulta.
+O sistema deverá ser capaz de registrar uma consulta recebendo de um formulário
+os dados do nome do paciente e hora da consulta (Pode considerar que todas consultas
+marcadas serão para o mesmo dia, logo desconsidere o dia da marcação). O campo de
+nome deve ser um campo de texto, já o campo de hora não tem um tipo definido, pode ser o
+de preferência do desenvolvedor para o caso exigido. <br/>
+  IMPORTANTE: os horários das consultas serão de 30 minutos. uma vez que uma consulta é
+marcada para um horário, outra não deve poder ser marcada para o mesmo horário. O
+sistema deve aceitar consultas das 9:00 às 18:00.
 
-- Crie outro componente que exiba uma tabela com os horário disponíveis para consulta, contendo nela as informações de consulta que já foram marcadas.
-
-- A tabela deve destacar as consultas que ocorrerão em até 120min.
-
-- As consultas agendadas devem poder ser canceladas, tornando o horário vago para novos agendamentos, e mantendo o registro de consulta cancelada (pode ser em outra tabela)
-
-- A tabela deve ter um filtro que varia entre:
-  -Todas consultas já marcadas
-  -Consultas a serem realizadas
-
-- Após o horário de uma consulta ser ultrapassado, a consulta deve ser identificada como 'concluída'
+- Requisito 2: Acompanhamento de consultas marcadas.
+O sistema deverá ser capaz de exibir as consultas já marcadas, na ordem do
+horário. As consultas que deverão ocorrer em até 2 horas do horário atual devem receber
+um destaque (de tamanho, cor ou alguma outra forma, fica a critério do desenvolvedor).
+Cada consulta deve poder ser cancelada, liberando o horário para outra consulta, mas não
+excluindo o item da consulta cancelada, com fim da manutenção de um histórico. O único
+filtro obrigatório para esse requisito é um switch para mostrar apenas consultas válidas ou
+todas as consultas (válidas ou canceladas), mas filtros de outras formas serão bem vindos.
